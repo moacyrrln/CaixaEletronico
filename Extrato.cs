@@ -6,9 +6,9 @@ namespace GamaCaixaEletronico
 {
     public class Extrato
     {
-        public List<ListaDeSaque> _dadosdosaque;
+        public List<DadosDoSaque> _dadosdosaque;
 
-        public Extrato(List<ListaDeSaque> dadosdosaque)
+        public Extrato(List<DadosDoSaque> dadosdosaque)
         {
             _dadosdosaque = dadosdosaque;
         }
@@ -16,7 +16,7 @@ namespace GamaCaixaEletronico
         public void ImprimirNaTela()
         {
             Console.Clear();
-            foreach (ListaDeSaque linha in _dadosdosaque)
+            foreach (DadosDoSaque linha in _dadosdosaque)
             {
                 Console.WriteLine($"Dados do saque: {linha._datahoradosaque} - R${linha._totalsacado},00");
             }
