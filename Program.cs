@@ -27,13 +27,12 @@ namespace GamaCaixaEletronico
             List<ListaDeSaque> ListaDeSaques = new();
             while (true)
             {
-                var CaixaEletronico1 = new CaixaEletronico();
                 Console.Write("Informe o valor a ser Sacado (digite F para finalizar, digite L para listar todos os saques): ");
                 var ValorASerSacado = Console.ReadLine();
                 bool isNumber = int.TryParse(ValorASerSacado, out _);
                 if (isNumber)
                 {
-                    RetornoDoValorASerSacado(ListaDeSaques, CaixaEletronico1, ValorASerSacado);
+                    RetornoDoValorASerSacado(ListaDeSaques, ValorASerSacado);
                 }
                 else
                 {
@@ -52,7 +51,7 @@ namespace GamaCaixaEletronico
             }
         }
 
-        private static void RetornoDoValorASerSacado(List<ListaDeSaque> ListaDeSaques, CaixaEletronico CaixaEletronico1, string ValorASerSacado)
+        private static void RetornoDoValorASerSacado(List<ListaDeSaque> ListaDeSaques, string ValorASerSacado)
         {
             var Saque = CaixaEletronico.Saque(Int32.Parse(ValorASerSacado));
             if (Saque.Total == 0)
